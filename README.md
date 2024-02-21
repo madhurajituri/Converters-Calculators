@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -10,3 +11,6 @@ Currently, two official plugins are available:
 =======
 # Convertify
 >>>>>>> a4b2697a3268618034e125f71b44bcbf3f44a328
+=======
+# Converters-Calculators
+>>>>>>> da09e2456eb4a910402e27253b7f16fd33f15ae6
