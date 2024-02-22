@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --primary-light: rgb(218, 232, 253);
+  --primary-dark: rgb(63, 63, 138);
+}
+
+@layer base{
+  body{
+    @apply bg-[--primary-light] scroll-smooth
+  }
+
+  .btn{
+    @apply w-[300px] h-[100px] flex justify-center text-center items-center content-center bg-neutral-200 font-sans text-2xl text-slate-500 hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-lg shadow-slate-300 border-white font-medium
+  }
+
+  .btn2{
+    @apply w-[230px] h-[100px] flex justify-center text-center items-center content-center bg-neutral-200 font-sans text-xl text-slate-500 hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-lg shadow-slate-300 border-white font-medium
+  }
+}
