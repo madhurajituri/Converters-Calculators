@@ -6,7 +6,7 @@
   --primary-light: rgb(218, 232, 253);
   --primary-dark: rgb(63, 63, 138);
   body{
-    @apply bg-gradient-to-r from-purple-900 to-cyan-500 
+    @apply bg-gradient-to-r from-purple-900 to-cyan-500  
   }
 }
 
