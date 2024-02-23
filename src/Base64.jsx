@@ -1,7 +1,11 @@
+import React from 'react'
+
 function Base64(){
     return(
         <>
-        <p>Base64</p>
+        <div className="bg-red-w-full-h-full">hello</div>
         </>
     )
 }
+
+export default Base64

@@ -5,18 +5,35 @@
 :root{
   --primary-light: rgb(218, 232, 253);
   --primary-dark: rgb(63, 63, 138);
+  body{
+    @apply bg-gradient-to-r from-purple-900 to-cyan-500 
+  }
 }
 
 @layer base{
-  body{
-    @apply bg-[--primary-light] scroll-smooth
-  }
+  
 
   .btn{
-    @apply w-[300px] h-[100px] flex justify-center text-center items-center content-center bg-neutral-200 font-sans text-2xl text-slate-500 hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-lg shadow-slate-300 border-white font-medium
+    @apply z-10 w-2/5 h-[40px] flex justify-center text-center items-center bg-blue-200 my-3 font-mono text-xl text-[--primary-dark] hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-sm shadow-slate-600 border-black
   }
 
-  .btn2{
-    @apply w-[230px] h-[100px] flex justify-center text-center items-center content-center bg-neutral-200 font-sans text-xl text-slate-500 hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-lg shadow-slate-300 border-white font-medium
+  .heading{
+    @apply text-center font-semibold text-3xl text-gray-200 mt-14 mb-2 font-mono
+  }
+
+  .codearea{
+    @apply w-96 h-[65vh] bg-gray-700 border border-gray-300 text-sm text-gray-300 p-2 rounded-md
+  }
+
+  .info{
+    @apply text-center text-sm text-[--primary-dark] 
+  }
+
+  .convertbtn{
+    @apply w-1/2 h-7 bg-green-400 text-sm text-black rounded-md shadow-sm shadow-black my-4 hover:bg-green-500 active:bg-green-600
+  }
+
+  .stateheading{
+    @apply text-lg text-red-300 m-2
   }
 }
