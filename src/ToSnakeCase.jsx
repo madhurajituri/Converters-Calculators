@@ -6,6 +6,11 @@ function ToSnakeCase(){
     function converttext(){
         let copy = text;
         console.log(copy);
+        let j=0;
+        while(copy[j]===" " || copy[j]==="\n"){
+            j++;
+        }
+        copy = copy.slice(j);
         for(let i=copy.length-1;i>=0;i--){
             if(copy[i]===" " || copy[i]==="\n"){
                 copy = copy.slice(0,i);

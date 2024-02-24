@@ -8,70 +8,52 @@ function ToCamelCase(){
     function converttext(){
         let ans = "";
         let i = 0;
-        
-        while(text[i]===" " || text[i]==="\n"){
+        let copy = text;
+        while(copy[i]===" " || copy[i]==="\n"){
             i++;
         }
+        copy = copy.slice(i);
+        let j = copy.length - 1;
+        while(copy[j]===" " || copy[j]==="\n"){
+            j--;
+        }
+        copy = copy.slice(0,j+1);
+        console.log(copy);
         if(capital){
-            let c = text[i].toUpperCase();
+            let c = copy[0].toUpperCase();
             ans += c;
         }
         else{
-            let c = text[i].toLowerCase();
+            let c = copy[0].toLowerCase();
             ans += c;
         }
-        // if(space){
-        //     let convert = text;
-        //     let flag = false;
-        //     for(let j=i+1;i<convert.length;j++){
-        //         if(convert[j]===" " || convert[j]==="\n"){
-        //             flag = false;
-        //             ans += convert[j];
-        //         }
-        //         else if(convert[j-1]===" " || convert[j-1]==="\n"){
-        //             let character = convert[j];
-        //             ans += character.toUpperCase();
-        //         }
-        //         // else{
-        //         //     let character = convert[j];
-        //         //     ans += character.toLowerCase();
-        //         // }
-        //     }
-        // }
-        // else{
-        //     let convert = text;
-        //     for(let k=i+1;k<convert.length;k++){
-        //         if(convert[k-1]===" " || convert[k-1]==="\n"){
-        //             convert[k] = convert[k].toUpperCase();
-        //             ans += convert[k];
-        //         }
-        //         else{
-        //             ans += convert[k].toLowerCase();
-        //         }
-        //     }
-        // }
+        if(space){
+            for(let i=1;i<copy.length;i++){
+                if(copy[i]===" " || copy[i]==="\n"){
+                    ans += copy[i];
+                }
+                else if(copy[i]!==" " && copy[i]!=="\n" && (copy[i-1]===" " || copy[i-1]==="\n")){
+                    ans += copy[i].toUpperCase();
+                }
+                else{
+                    ans += copy[i].toLowerCase();
+                }
+            }
+        }
+        else{
+            for(let i=1;i<copy.length;i++){
+                if(copy[i]!==" " && copy[i]!=="\n" && (copy[i-1]===" " || copy[i-1]==="\n")){
+                    ans += copy[i].toUpperCase();
+                }
+                else if(copy[i]===" " || copy[i]==="\n"){
+                    continue;
+                }
+                else{
+                    ans += copy[i].toLowerCase();
+                }
+            }
+        }
         setconverted(ans);
-            // const words = text.split(" ");
-            // for(let i=0; i<words.length; i++){
-            //     convert += words[i].slice(0,1).toUpperCase() + words[i].slice(1) + " ";
-            // }
-            // convert.slice(0,-1);
-            // setconverted(convert);
-        // else{
-        //     let convert = "";
-        //     const words = text.split(" ");
-        //     for(let i=0; i<words.length; i++){
-        //         convert += words[i].slice(0,1).toUpperCase() + words[i].slice(1);
-        //     }
-        //     convert.slice(0,-1);
-        //     setconverted(convert);
-        // }
-        // if(!capital){
-        //     let copy = converted;
-        //     let first = copy.slice(0,1).toLowerCase();
-        //     first += copy.slice(1);
-        //     setconverted(first);
-        // }
     }
     return(
         <>
