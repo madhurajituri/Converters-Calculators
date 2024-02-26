@@ -22,7 +22,7 @@ function Home(){
         <Link to="ToCamelCase" className="btn">ToCamelCase</Link>
         <Link to="ToSnakeCase" className="btn">ToSnakeCase</Link>
         <Link to="Base64" className="btn">Base 64</Link>
-        <Link to="Sha" className="btn">SHA</Link>
+        <Link to="Sha" className="btn">Secure Hash Algorithm (SHA)</Link>
         </div> 
     </div>
     

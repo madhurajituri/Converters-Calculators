@@ -40,7 +40,6 @@ const App = () => {
       <Route path="Home/Sha" element={<Sha/>}></Route>
       <Route path="Home/JsonBeautifier" element={<JsonBeautifier/>}></Route>
     </Routes> 
-    
     </>
   )
 }
