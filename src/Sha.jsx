@@ -124,7 +124,7 @@ function Sha() {
                 </div>
 
             </div>
-                    <div className="flex flex-col mx-10 items-center">
+                    <div className="flex flex-col mx-10 -my-10 items-center">
                         <div className="heading text-lg ml-12">SHA-512</div>
                         <div className="flex gap-5">
                             <div className="flex flex-col items-center gap-8">

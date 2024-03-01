@@ -36,4 +36,8 @@
   .stateheading{
     @apply text-lg text-red-300 m-2
   }
+
+  .selects{
+    @apply w-24 h-10 bg-slate-300 border-slate-900 text-black shadow-md text-sm p-2 rounded-md hover:bg-slate-400
+  }
 }
