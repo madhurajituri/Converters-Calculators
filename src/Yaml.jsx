@@ -1,6 +1,5 @@
 import { React, useState } from "react";
-import convertor from 'js-yaml';
-// import fs from 'fs';
+import YAML from 'json2yaml';
 
 function Yaml() {
 
@@ -8,11 +7,8 @@ function Yaml() {
     const [yaml , setyaml] = useState("");
 
     function convert(){
-//         const doc = yaml.load(fs.readFileSync('/home/ixti/example.yml', 'utf8'));
-//   console.log(doc);
-        // const ans = yaml.toString(json);
-        // console.log(ans);
-        // setyaml(ans);
+        let x = YAML.stringify(JSON.parse(json));
+        setyaml(x);
     }
 
     return (
