@@ -94,9 +94,9 @@ function CompoundInterest() {
 
                 </div>
             </div>
-            <div className="absolute bottom-0 right-0 flex items-center px-20 my-10 gap-10">
-                <div className="text-red-300 text-2xl">Future investment value : </div>
+            <div className="flex flex-row-reverse px-20 my-10 gap-10 items-centre">
                 <div className="text-8xl text-slate-200 font-bold"><span className="text-xl text-slate-200">{symbol}</span>{ans}</div>
+                <div className="text-red-300 text-2xl">Future investment value : </div>
             </div>
         </>
     )

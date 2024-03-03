@@ -52,6 +52,7 @@ function Sha() {
 
     return (
         <>
+        <div className="m-20">
             <div className="flex flex-row m-10 gap-5 items-center justify-center">
 
                 <div className="flex flex-col items-center justify-center">
@@ -137,6 +138,7 @@ function Sha() {
                             </div>
                         </div>
                         <button className="convertbtn ml-12 w-20" onClick={convert512}>Convert</button>
+                    </div>
                     </div>
         </>
     )

@@ -5,13 +5,17 @@
 :root{
   --primary-light: rgb(218, 232, 253);
   --primary-dark: rgb(63, 63, 138);
-  body{
-    @apply bg-gradient-to-r from-purple-900 to-cyan-500  
-  }
+}
+
+body{
+  @apply bg-gradient-to-r from-purple-900 to-cyan-500 bg-fixed bg-center bg-cover
 }
 
 @layer base{
   
+  .footer{
+    @apply bg-slate-800 w-full h-72 z-0 py-10 px-24
+  }
 
   .btn{
     @apply z-10 w-2/5 h-[40px] flex justify-center text-center items-center bg-blue-200 my-3 font-mono text-xl text-[--primary-dark] hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-sm shadow-slate-600 border-black
