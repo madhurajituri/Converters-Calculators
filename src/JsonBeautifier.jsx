@@ -6,10 +6,10 @@ import UploadIcon from '@mui/icons-material/FileUploadOutlined';
 
 function JsonBeautifier() {
 
-    const [indent, setindent] = useState("4");
+    const [indent, setindent] = useState(4);
     const [quotes, setquotes] = useState("double");
-    const [deep, setdeep] = useState("1");
-    const [inline, setinline] = useState(true);
+    const [deep, setdeep] = useState(1);
+    const [inline, setinline] = useState(false);
     const [keys, setkeys] = useState(false);
     const [numbers, setnumbers] = useState(false);
     const [minify, setminify] = useState(false);
@@ -20,14 +20,14 @@ function JsonBeautifier() {
     const file = useRef();
 
     function beautification() {
-        const object = {"pi": "3.14159265359", "e": "2.7182818284", "prime": [2, 3, 5, 7, 11, 13, 17, 19], "1+6": 7}
-        console.log(json_beautifier(object,{
-            dropQuotesOnNumbers: true,space:4,
-            minify: true
-          }));
-        // const x = json_beautifier(content, { space: indent, quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, minify: minify });
-        // setbeautified(x);
-        // console.log(x);
+        if(indent==="1" || indent==="2" || indent==="3" || indent==="4" || indent==="8"){
+            const x = json_beautifier(JSON.parse(content), { space: Number(indent), quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, inlineShortArraysDepth: Number(deep) , minify: minify });
+            setbeautified(x);
+        }
+        else{
+            const x = json_beautifier(JSON.parse(content), { space: indent, quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, inlineShortArraysDepth: Number(deep) , minify: minify });
+            setbeautified(x);
+        }
     }
 
     function handleChangeFile(event) {
@@ -82,6 +82,7 @@ function JsonBeautifier() {
                             <option value="2">2 space</option>
                             <option value="3">3 space</option>
                             <option value="4">4 space</option>
+                            <option value="8">Tab</option>
                         </select>
                     </div>
                     <div className="flex flex-col justify-center items-center mb-8">
@@ -94,11 +95,11 @@ function JsonBeautifier() {
                     <div className="flex flex-col justify-center items-center mb-8">
                         <div className="stateheading text-slate-200"><label><input type="checkbox" className="mx-2 accent-red-300" value={inline} onChange={e => setinline(e.target.checked)} />Inline short-arrays</label></div>
                         <select className="selects w-28" value={deep} onChange={e => setdeep(e.target.value)}>
-                            <option value="1deep">1 level deep</option>
-                            <option value="2deep">2 level deep</option>
-                            <option value="3deep">3 level deep</option>
-                            <option value="4deep">4 level deep</option>
-                            <option value="5deep">5 level deep</option>
+                            <option value="1">1 level deep</option>
+                            <option value="2">2 level deep</option>
+                            <option value="3">3 level deep</option>
+                            <option value="4">4 level deep</option>
+                            <option value="5">5 level deep</option>
                         </select>
                     </div>
                     <div className="flex flex-col justify-center mx-0">
