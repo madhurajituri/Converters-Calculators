@@ -2,6 +2,10 @@ import { React, useRef, useState } from 'react';
 import { json_beautifier } from 'csvjson-json_beautifier';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import UploadIcon from '@mui/icons-material/FileUploadOutlined';
+import Clipboard from "react-copy-to-clipboard";
+import CopyIcon from '@mui/icons-material/ContentCopy';
+import TickIcon from '@mui/icons-material/Done';
+import { grey } from '@mui/material/colors';
 
 
 function JsonBeautifier() {
@@ -16,18 +20,26 @@ function JsonBeautifier() {
     const [selectedfile, setselectedfile] = useState(null);
     const [content, setcontent] = useState("");
     const [beautified, setbeautified] = useState("");
+    const [copied, setcopied] = useState(false);
 
     const file = useRef();
 
     function beautification() {
-        if(indent==="1" || indent==="2" || indent==="3" || indent==="4" || indent==="8"){
-            const x = json_beautifier(JSON.parse(content), { space: Number(indent), quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, inlineShortArraysDepth: Number(deep) , minify: minify });
+        if (indent === "1" || indent === "2" || indent === "3" || indent === "4" || indent === "8") {
+            const x = json_beautifier(JSON.parse(content), { space: Number(indent), quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, inlineShortArraysDepth: Number(deep), minify: minify });
             setbeautified(x);
         }
-        else{
-            const x = json_beautifier(JSON.parse(content), { space: indent, quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, inlineShortArraysDepth: Number(deep) , minify: minify });
+        else {
+            const x = json_beautifier(JSON.parse(content), { space: indent, quoteType: quotes, dropQuotesOnKeys: keys, dropQuotesOnNumbers: numbers, inlineShortArrays: inline, inlineShortArraysDepth: Number(deep), minify: minify });
             setbeautified(x);
         }
+    }
+
+    function handlecopy() {
+        setcopied(true);
+        setTimeout(() => {
+            setcopied(false);
+        }, 800);
     }
 
     function handleChangeFile(event) {
@@ -112,6 +124,11 @@ function JsonBeautifier() {
                 <div className="flex flex-col items-center">
                     <div className="stateheading">Output</div>
                     <textarea className="codearea" value={beautified} readOnly></textarea>
+                    <Clipboard text={beautified}>
+                        <button onClick={handlecopy} className="rounded-xl mt-2 bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                            {!copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                        </button>
+                    </Clipboard>
                 </div>
             </div>
 
