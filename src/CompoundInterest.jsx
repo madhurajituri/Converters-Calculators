@@ -42,7 +42,7 @@ function CompoundInterest() {
             <div>
                 <div className="heading">Compound Interest</div>
                 <div className="flex flex-row m-20 gap-10">
-                    <div className="flex flex-col text-lg text-red-300 gap-6 flex-start">
+                    <div className="flex flex-col text-lg text-red-300 gap-6 flex-start max-[670px]:w-56">
                         <div>Enter the currency</div>
                         <div>Enter the Principal Amount</div>
                         <div>Enter the Interest Rate in % (Annually)</div>
@@ -50,7 +50,7 @@ function CompoundInterest() {
                         <div>Select the Tenure</div>
                         <button className="convertbtn" onClick={Calculateamount}>Calculate</button>
                     </div>
-                    <div className="flex flex-col gap-8 flex-start w-96">
+                    <div className="flex flex-col gap-8 flex-start w-96 max-[805px]:w-72">
                         <select className="codearea rounded-md w-full h-6 p-0" value={money} onChange={(e) => setmoney(e.target.value)}>
                             <option value="inr">Indian Rupee</option>
                             <option value="usd">United States Dollar</option>
@@ -63,8 +63,8 @@ function CompoundInterest() {
                             <option value="dirhams">United Arab Emirates Dirham</option>
                         </select>
                         <input type="number" className="codearea w-full h-5 rounded-md" placeholder="0" onChange={e => setprincipal(e.target.value)} />
-                        <input type="number" className="codearea w-full h-5 rounded-md" placeholder="0" onChange={e => setinterest(e.target.value)} />
-                        <select className="codearea rounded-md w-25 h-6 p-0" value={period} onChange={e => setperiod(e.target.value)}>
+                        <input type="number" className="codearea w-full h-5 rounded-md max-[670px]:mt-7" placeholder="0" onChange={e => setinterest(e.target.value)} />
+                        <select className="codearea rounded-md w-full h-6 p-0 max-[727.5px]:mt-5 max-[563.5px]:mt-14" value={period} onChange={e => setperiod(e.target.value)}>
                             <option value="yearly">Yearly</option>
                             <option value="semi">Semi-annually</option>
                             <option value="quarterly">Quarterly</option>
@@ -72,7 +72,7 @@ function CompoundInterest() {
                             <option value="weekly">Weekly</option>
                             <option value="daily">Daily</option>
                         </select>
-                        <div className="flex flex-row gap-2 w-full">
+                        <div className="flex flex-row gap-2 w-full max-[964px]:mt-5 max-[640px]:mt-14">
                             <div className="flex flex-col">
                                 <input type="number" className="codearea rounded-md h-6 w-full" onChange={e => setyears(e.target.value)} placeholder="0" />
                                 <div className="text-slate-200 text-xs">Years</div>

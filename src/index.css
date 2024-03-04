@@ -14,11 +14,11 @@ body{
 @layer base{
   
   .footer{
-    @apply bg-slate-800 w-full h-72 z-0 py-10 px-24
+    @apply bg-slate-800 w-full sm:h-96 h-80 lg:h-96 z-0 md:py-10 md:px-24 p-10 max-[375px]:px-3 max-[375px]:py-5 max-[375px]:h-full
   }
 
   .btn{
-    @apply z-10 w-2/5 h-[40px] flex justify-center text-center items-center bg-blue-200 my-3 font-mono text-xl text-[--primary-dark] hover:bg-neutral-300 active:bg-neutral-400 rounded-md shadow-sm shadow-slate-600 border-black
+    @apply text-lg w-72 h-16 z-10 flex justify-center text-center p-2 items-center bg-blue-200 font-mono text-[--primary-dark] hover:bg-neutral-300 active:bg-neutral-400 rounded-xl shadow-sm shadow-slate-600 my-3 border-black md:w-72 md:h-14 md:text-lg lg:text-2xl lg:w-80 lg:h-20 max-[320px]:w-48 max-[320px]:h-24
   }
 
   .heading{
