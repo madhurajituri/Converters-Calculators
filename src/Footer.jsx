@@ -27,7 +27,7 @@ function Footer() {
                     <div className="text-slate-300 text-base sm:text-lg">Calculators provided</div>
                     <div className="flex flex-col z-2 gap-1">
                         <Link to="/CompoundInterest" className="text-slate-300 text-xs sm:text-sm">Compound Interest</Link>
-                        <Link to="/Ipv4" className="text-slate-300 text-xs sm:text-sm">IP Subnet (v4/v6)</Link>
+                        {/* <Link to="/Ipv4" className="text-slate-300 text-xs sm:text-sm">IP Subnet (v4/v6)</Link> */}
                     </div>
                 </div>
                 <div className="flex flex-col z-2 gap-3">
