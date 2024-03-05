@@ -10,7 +10,21 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 =======
 # Convertify
->>>>>>> a4b2697a3268618034e125f71b44bcbf3f44a328
-=======
-# Converters-Calculators
->>>>>>> da09e2456eb4a910402e27253b7f16fd33f15ae6
+
+Deployment link - https://zippy-mooncake-bc3dbd.netlify.app/
+
+A frontend project to create a website using ReactJS and Tailwind CSS.
+Provides certain calculators and convertors in one platform :
+1. Compound Interest
+2. Base 64
+3. Secure Hash Algorithm (1 , 224 , 256 , 384 , 512)
+4. ToUppercase
+5. ToCamelcase
+6. ToLowercase
+7. ToSnakecase
+8. AWS Cloudformation JSON to YAML
+9. AWS Cloudformation YAML to JSON
+10. Json Beautifier
+11. IP sunetting (v4/v6)
+
+Currently IP v4/v6 subnet calculator is in prpocess of building and not working.
