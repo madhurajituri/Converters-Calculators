@@ -11,7 +11,7 @@ Currently, two official plugins are available:
 =======
 # Convertify
 
-Deployment link - https://zippy-mooncake-bc3dbd.netlify.app/
+Deployment link - https://convertifywithme.netlify.app/
 
 A frontend project to create a website using ReactJS and Tailwind CSS.
 Provides certain calculators and convertors in one platform :
