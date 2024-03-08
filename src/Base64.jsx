@@ -39,41 +39,58 @@ function Base64() {
 
     return (
         <>
-            <div>
+            <div className='m-20'>
                 <div className="heading">Base 64 Conversion</div>
-                <div className="flex flex-col m-20 gap-24 items-center justify-center">
-                    <div className="flex flex-col md:flex-row gap-5 items-center justify-center w-full">
-                        <div>
-                            <div className="stateheading text-center">Enter input for encoding</div>
-                            <textarea className="codearea h-36" value={inputencode} onChange={e => setinputencode(e.target.value)}></textarea>
-                        </div>
-                        <button className="convertbtn" onClick={encode}>Encode</button>
-                        <div>
-                            <div className="stateheading text-center">Encoded output</div>
-                            <textarea className="codearea h-36" value={outputencode} readOnly></textarea>
-                        </div>
-                        <Clipboard text={outputencode}>
-                            <button onClick={handlecopyencode} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                {!encodecopied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                            </button>
-                        </Clipboard>
+                <div className="mt-10 flex flex-col min-[1125px]:flex-row min-[1125px]:gap-24 items-center justify-center">
+
+                    <div className="justify-center items-center w-full sm:w-fit">
+                        <div className="heading text-lg sm:ml-16">Base 64 encoding</div>
+                        <div className="flex gap-2 flex-col">
+                            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 sm:gap-6">
+                                <div className="text-red-300 sm:w-16 text-center">Enter input for encoding</div>
+                                <textarea className="codearea max-[370px]:w-64 w-80 h-20 sm:w-96" value={inputencode} onChange={e => setinputencode(e.target.value)}></textarea>
+                            </div>
+                            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 sm:gap-6">
+                                <div className="text-red-300 sm:-mt-16 sm:w-16 text-center">Encoded output</div>
+                                <div className="flex flex-col">
+                                    <textarea className="codearea max-[370px]:w-64 w-80 sm:w-96 h-20" value={outputencode} readOnly></textarea>
+                                    <div className="flex justify-between items-center">
+                                        <button className="convertbtn w-20" onClick={encode}>Encode</button>
+                                        <Clipboard text={outputencode}>
+                                            <button onClick={handlecopyencode} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                                {!encodecopied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                            </button>
+                                        </Clipboard>
+                                    </div>
+                                </div>
+                            </div>
+                        </div >
                     </div>
-                    <div className="flex flex-col md:flex-row gap-5 items-center w-full">
-                        <div>
-                            <div className="stateheading text-center">Enter input for decoding</div>
-                            <textarea className="codearea h-36" value={inputdecode} onChange={e => setinputdecode(e.target.value)}></textarea>
-                        </div>
-                        <button className="convertbtn" onClick={decode}>Decode</button>
-                        <div>
-                            <div className="stateheading text-center">Decoded output</div>
-                            <textarea className="codearea h-36" value={outputdecode} readOnly></textarea>
-                        </div>
-                        <Clipboard text={outputdecode}>
-                            <button onClick={handlecopydecode} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                {!decodecopied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                            </button>
-                        </Clipboard>
+
+                    <div className="justify-center items-center w-full sm:w-fit">
+                        <div className="heading text-lg sm:ml-16">Base 64 decoding</div>
+                        <div className="flex gap-2 flex-col">
+                            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 sm:gap-6">
+                                <div className="text-red-300 sm:w-16 text-center">Enter input for decoding</div>
+                                <textarea className="codearea max-[370px]:w-64 w-80 h-20 sm:w-96" value={inputdecode} onChange={e => setinputdecode(e.target.value)}></textarea>
+                            </div>
+                            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 sm:gap-6">
+                                <div className="text-red-300 sm:-mt-16 sm:w-16 text-center">Decoded output</div>
+                                <div className="flex flex-col">
+                                    <textarea className="codearea max-[370px]:w-64 w-80 sm:w-96 h-20" value={outputdecode} readOnly></textarea>
+                                    <div className="flex justify-between items-center">
+                                        <button className="convertbtn w-20" onClick={decode}>Decode</button>
+                                        <Clipboard text={outputdecode}>
+                                            <button onClick={handlecopydecode} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                                {!decodecopied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                            </button>
+                                        </Clipboard>
+                                    </div>
+                                </div>
+                            </div>
+                        </div >
                     </div>
+
                 </div>
             </div>
         </>
