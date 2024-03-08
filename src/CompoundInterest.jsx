@@ -107,7 +107,7 @@ function CompoundInterest() {
                 <div className="text-red-300 text-2xl text-center">Future investment value :</div>
                 <div className="text-4xl md:text-8xl text-slate-200 font-bold text-center">
                     <span className="text-lg text-slate-200">{symbol}</span>
-                    10000000.00
+                    {ans}
                 </div>
 
             </div>
