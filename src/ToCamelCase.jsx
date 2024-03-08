@@ -72,8 +72,8 @@ function ToCamelCase() {
     return (
         <>
             <h2 className="heading">To Camel Case</h2>
-            <div className="flex gap-10 justify-center w-full">
-                <div className="info flex flex-col items-center justify-center">
+            <div className="flex flex-col md:flex-row gap-10 justify-center m-10">
+                <div className="info flex flex-col items-center justify-center w-full">
                     <h3 className="stateheading">Enter text for conversion here!</h3>
                     <textarea className="codearea" value={text} onChange={(e) => settext(e.target.value)}></textarea>
                     <label className="text-red-300 text-sm my-1 items-center">
@@ -86,7 +86,7 @@ function ToCamelCase() {
                     </label>
                     <button className="convertbtn" onClick={converttext}>Convert</button>
                 </div>
-                <div className="info flex flex-col items-center">
+                <div className="info flex flex-col items-center w-full">
                     <h3 className="stateheading">Camelcased text!</h3>
                     <textarea className="codearea" value={converted} readOnly></textarea>
                     <Clipboard text={converted}>

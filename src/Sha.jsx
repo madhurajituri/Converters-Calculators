@@ -92,49 +92,53 @@ function Sha() {
     return (
         <>
             <div className="m-20">
-                <div className="flex flex-row m-10 gap-5 justify-center">
+                <div className="flex flex-col items-center lg:flex-row m-10 gap-2 lg:gap-5 justify-center">
 
-                    <div className="flex flex-col justify-center">
+                    <div className="flex flex-col justify-center items-center">
 
-                        <div className="flex flex-col mx-10">
-                            <div className="heading text-lg ml-12">SHA-1</div>
-                            <div className="flex gap-5">
-                                <div className="flex flex-col items-center gap-16">
+                        <div className="flex flex-col justify-center items-center w-full">
+                            <div className="heading text-lg sm:ml-12">SHA-1</div>
+                            <div className="flex gap-2 flex-col">
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
                                     <div className="text-red-300">Input</div>
-                                    <div className="text-red-300">Output</div>
+                                    <textarea className="codearea w-80 h-20 sm:w-96 max-[370px]:w-64" value={sha1input} onChange={e => setsha1input(e.target.value)}></textarea>
                                 </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <textarea className="codearea w-96 h-20" value={sha1input} onChange={e => setsha1input(e.target.value)}></textarea>
-                                    <textarea className="codearea w-96 h-20" value={sha1output} readOnly></textarea>
-                                    <div className="flex justify-between items-center gap-2 w-96">
-                                        <button className="convertbtn w-20" onClick={convert1}>Convert</button>
-                                        <Clipboard text={sha1output}>
-                                            <button onClick={handle1} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                                {!sha1copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                                            </button>
-                                        </Clipboard>
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+                                    <div className="text-red-300 sm:-mt-16">Output</div>
+                                    <div className="flex flex-col">
+                                        <textarea className="codearea w-80 sm:w-96 h-20 max-[370px]:w-64" value={sha1output} readOnly></textarea>
+                                        <div className="flex justify-between items-center">
+                                            <button className="convertbtn w-20" onClick={convert1}>Convert</button>
+                                            <Clipboard text={sha1output}>
+                                                <button onClick={handle1} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                                    {!sha1copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                                </button>
+                                            </Clipboard>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div >
                         </div>
 
-                        <div className="flex flex-col mx-10 items-center">
-                            <div className="heading text-lg ml-12">SHA-224</div>
-                            <div className="flex gap-5">
-                                <div className="flex flex-col items-center gap-16">
+                        <div className="flex flex-col justify-center items-center w-full">
+                            <div className="heading text-lg sm:ml-12">SHA-224</div>
+                            <div className="flex gap-2 flex-col">
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
                                     <div className="text-red-300">Input</div>
-                                    <div className="text-red-300">Output</div>
+                                    <textarea className="codearea w-80  max-[370px]:w-64 h-20 sm:w-96" value={sha224input} onChange={e => setsha224input(e.target.value)}></textarea>
                                 </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <textarea className="codearea w-96 h-20" value={sha224input} onChange={e => setsha224input(e.target.value)}></textarea>
-                                    <textarea className="codearea w-96 h-20" value={sha224output} readOnly></textarea>
-                                    <div className="flex justify-between items-center gap-2 w-96">
-                                        <button className="convertbtn w-20" onClick={convert224}>Convert</button>
-                                        <Clipboard text={sha224output}>
-                                            <button onClick={handle224} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                                {!sha224copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                                            </button>
-                                        </Clipboard>
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+                                    <div className="text-red-300 sm:-mt-16">Output</div>
+                                    <div className="flex flex-col">
+                                        <textarea className="codearea max-[370px]:w-64 w-80 sm:w-96 h-20" value={sha224output} readOnly></textarea>
+                                        <div className="flex justify-between items-center">
+                                            <button className="convertbtn w-20" onClick={convert224}>Convert</button>
+                                            <Clipboard text={sha224output}>
+                                                <button onClick={handle224} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                                    {!sha224copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                                </button>
+                                            </Clipboard>
+                                        </div>
                                     </div>
                                 </div>
                             </div >
@@ -144,74 +148,80 @@ function Sha() {
 
                     <div className="flex flex-col items-center justify-center">
 
-                        <div className="flex flex-col mx-10 items-center">
-                            <div className="heading text-lg ml-12">SHA-256</div>
-                            <div className="flex gap-5">
-                                <div className="flex flex-col items-center gap-16">
+                        <div className="flex flex-col justify-center items-center w-full">
+                            <div className="heading text-lg sm:ml-12">SHA-256</div>
+                            <div className="flex gap-2 flex-col">
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
                                     <div className="text-red-300">Input</div>
-                                    <div className="text-red-300">Output</div>
+                                    <textarea className="codearea w-80 h-20 sm:w-96 max-[370px]:w-64" value={sha256input} onChange={e => setsha256input(e.target.value)}></textarea>
                                 </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <textarea className="codearea w-50 h-20" value={sha256input} onChange={e => setsha256input(e.target.value)}></textarea>
-                                    <textarea className="codearea w-50 h-20" value={sha256output} readOnly></textarea>
-                                    <div className="flex justify-between items-center gap-2 w-96">
-                                        <button className="convertbtn w-20" onClick={convert256}>Convert</button>
-                                        <Clipboard text={sha256output}>
-                                            <button onClick={handle256} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                                {!sha256copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                                            </button>
-                                        </Clipboard>
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+                                    <div className="text-red-300 sm:-mt-16">Output</div>
+                                    <div className="flex flex-col">
+                                        <textarea className="codearea w-80 max-[370px]:w-64 sm:w-96 h-20" value={sha256output} readOnly></textarea>
+                                        <div className="flex justify-between items-center">
+                                            <button className="convertbtn w-20" onClick={convert256}>Convert</button>
+                                            <Clipboard text={sha256output}>
+                                                <button onClick={handle256} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                                    {!sha256copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                                </button>
+                                            </Clipboard>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div >
                         </div>
 
-                        <div className="flex flex-col mx-10 items-center">
-                            <div className="heading text-lg ml-12">SHA-384</div>
-                            <div className="flex gap-5">
-                                <div className="flex flex-col items-center gap-16">
+                        <div className="flex flex-col justify-center items-center w-full">
+                            <div className="heading text-lg sm:ml-12">SHA-384</div>
+                            <div className="flex gap-2 flex-col">
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
                                     <div className="text-red-300">Input</div>
-                                    <div className="text-red-300">Output</div>
+                                    <textarea className="codearea w-80 max-[370px]:w-64 h-20 sm:w-96" value={sha384input} onChange={e => setsha384input(e.target.value)}></textarea>
                                 </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <textarea className="codearea w-50 h-20" value={sha384input} onChange={e => setsha384input(e.target.value)}></textarea>
-                                    <textarea className="codearea w-50 h-20" value={sha384output} readOnly></textarea>
-                                    <div className="flex justify-between items-center gap-2 w-96">
-                                        <button className="convertbtn w-20" onClick={convert384}>Convert</button>
-                                        <Clipboard text={sha384output}>
-                                            <button onClick={handle384} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                                {!sha384copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                                            </button>
-                                        </Clipboard>
+                                <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+                                    <div className="text-red-300 sm:-mt-16">Output</div>
+                                    <div className="flex flex-col">
+                                        <textarea className="codearea max-[370px]:w-64 w-80 sm:w-96 h-20" value={sha384output} readOnly></textarea>
+                                        <div className="flex justify-between items-center">
+                                            <button className="convertbtn w-20" onClick={convert384}>Convert</button>
+                                            <Clipboard text={sha384output}>
+                                                <button onClick={handle384} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                                    {!sha384copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                                </button>
+                                            </Clipboard>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div >
                         </div>
 
 
                     </div>
 
                 </div>
-                <div className="flex flex-col mx-10 -my-10 items-center">
-                    <div className="heading text-lg ml-12">SHA-512</div>
-                    <div className="flex gap-5">
-                        <div className="flex flex-col items-center gap-16">
+                <div className="flex flex-col justify-center items-center w-full">
+                    <div className="heading text-lg sm:ml-12">SHA-512</div>
+                    <div className="flex gap-2 flex-col">
+                        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
                             <div className="text-red-300">Input</div>
-                            <div className="text-red-300">Output</div>
+                            <textarea className="codearea max-[370px]:w-64 w-80 h-20 sm:w-96" value={sha512input} onChange={e => setsha512input(e.target.value)}></textarea>
                         </div>
-                        <div className="flex flex-col items-center gap-2">
-                            <textarea className="codearea w-50 h-20" value={sha512input} onChange={e => setsha512input(e.target.value)}></textarea>
-                            <textarea className="codearea w-50 h-20" value={sha512output} readOnly></textarea>
-                            <div className="flex justify-between items-center gap-2 w-96">
-                                <button className="convertbtn w-20" onClick={convert512}>Convert</button>
-                                <Clipboard text={sha512output}>
-                                    <button onClick={handle512} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
-                                        {!sha512copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
-                                    </button>
-                                </Clipboard>
+                        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+                            <div className="text-red-300 sm:-mt-16">Output</div>
+                            <div className="flex flex-col">
+                                <textarea className="codearea max-[370px]:w-64 w-80 sm:w-96 h-20" value={sha512output} readOnly></textarea>
+                                <div className="flex justify-between items-center">
+                                    <button className="convertbtn w-20" onClick={convert512}>Convert</button>
+                                    <Clipboard text={sha512output}>
+                                        <button onClick={handle512} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
+                                            {!sha512copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}
+                                        </button>
+                                    </Clipboard>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </div >
                 </div>
             </div>
         </>

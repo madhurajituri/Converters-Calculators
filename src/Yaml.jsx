@@ -26,15 +26,15 @@ function Yaml() {
     return (
         <div>
             <div className="heading">JSON to YAML</div>
-            <div className="m-10 gap-5 justify-center flex">
-                <div className="items-center gap-2 flex flex-col">
+            <div className="m-10 gap-5 justify-center md:flex-row flex flex-col">
+                <div className="items-center gap-2 flex flex-col w-full">
                     <div className="stateheading">Input JSON</div>
-                    <textarea className="codearea w-[700px]" value={json} onChange={e => setjson(e.target.value)}></textarea>
-                    <button className="convertbtn w-40" onClick={convert}>Convert</button>
+                    <textarea className="codearea" value={json} onChange={e => setjson(e.target.value)}></textarea>
+                    <button className="convertbtn" onClick={convert}>Convert</button>
                 </div>
-                <div className="items-center gap-2 flex flex-col">
+                <div className="items-center gap-2 flex flex-col w-full">
                     <div className="stateheading">Output YAML</div>
-                    <textarea className="codearea w-[700px]" value={yaml} readOnly></textarea>
+                    <textarea className="codearea" value={yaml} readOnly></textarea>
                     <Clipboard text={yaml}>
                         <button onClick={handlecopy} className="rounded-xl mt-2 bg-slate-700 h-10 w-10 hover:bg-slate-800">
                             {!copied ? <CopyIcon sx={{ color: grey[50] }} /> : <TickIcon sx={{ color: grey[50] }} />}

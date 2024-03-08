@@ -68,13 +68,14 @@ function JsonBeautifier() {
 
             <div className="heading">JSON Beautifier</div>
             <div className="flex justify-center stateheading text-xl animate-pulse">*Either paste input or upload the file</div>
-            <div className="flex m-10 mt-5 mb-10 gap-10 justify-center">
-                <div className="flex flex-col items-center">
+            <div className="md:flex-row m-10 mt-5 mb-10 gap-10 justify-center flex flex-col">
+                <div className="flex flex-col items-center w-full">
                     <div className="stateheading">Input</div>
                     <textarea className="codearea" value={content} onChange={e => setcontent(e.target.value)}></textarea>
                     <button className="convertbtn" onClick={beautification}>Beautify</button>
                 </div>
-                <div className="flex flex-col items-center mx-5 mt-6">
+                <div className="flex flex-col items-center m-4">
+
                     <div className="flex flex-col justify-center items-center mb-8">
                         <div className="p-3 flex flex-col items-center justify-center h-50 rounded-2xl shadow-md bg-slate-300 border-dashed border-slate-800">Upload file
                             <input type="file" ref={file} style={{ display: "none" }} onChange={e => { handleChangeFile(e) }} />
@@ -85,25 +86,28 @@ function JsonBeautifier() {
                             </div>}
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center mb-8">
-                        <div className="stateheading text-slate-200 m-0">Indent</div>
-                        <select className="selects" value={indent} onChange={e => setindent(e.target.value)}>
-                            <option value=".">.</option>
-                            <option value="..">..</option>
-                            <option value="1">1 space</option>
-                            <option value="2">2 space</option>
-                            <option value="3">3 space</option>
-                            <option value="4">4 space</option>
-                            <option value="8">Tab</option>
-                        </select>
+                    <div className='flex flex-row gap-5 md:flex-col'>
+                        <div className="flex flex-col justify-center items-center mb-8">
+                            <div className="stateheading text-slate-200 m-0">Indent</div>
+                            <select className="selects" value={indent} onChange={e => setindent(e.target.value)}>
+                                <option value=".">.</option>
+                                <option value="..">..</option>
+                                <option value="1">1 space</option>
+                                <option value="2">2 space</option>
+                                <option value="3">3 space</option>
+                                <option value="4">4 space</option>
+                                <option value="8">Tab</option>
+                            </select>
+                        </div>
+                        <div className="flex flex-col justify-center items-center mb-8">
+                            <div className="stateheading text-slate-200 m-0">Quotes</div>
+                            <select className="selects" value={quotes} onChange={e => setquotes(e.target.value)}>
+                                <option value="single">Single</option>
+                                <option value="double">Double</option>
+                            </select>
+                        </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center mb-8">
-                        <div className="stateheading text-slate-200 m-0">Quotes</div>
-                        <select className="selects" value={quotes} onChange={e => setquotes(e.target.value)}>
-                            <option value="single">Single</option>
-                            <option value="double">Double</option>
-                        </select>
-                    </div>
+
                     <div className="flex flex-col justify-center items-center mb-8">
                         <div className="stateheading text-slate-200"><label><input type="checkbox" className="mx-2 accent-red-300" value={inline} onChange={e => setinline(e.target.checked)} />Inline short-arrays</label></div>
                         <select className="selects w-28" value={deep} onChange={e => setdeep(e.target.value)}>
@@ -115,13 +119,13 @@ function JsonBeautifier() {
                         </select>
                     </div>
                     <div className="flex flex-col justify-center mx-0">
-                        <div className="stateheading text-slate-200 m-0">No quotes on:</div>
+                        <div className="stateheading text-slate-200 m-0 text-center">No quotes on:</div>
                         <div className="stateheading text-red-200 m-0"><label><input type="checkbox" className="mx-2 accent-red-300" value={keys} onChange={e => setkeys(e.target.checked)} />Keys</label></div>
                         <div className="stateheading text-red-200 m-0"><label><input type="checkbox" className="mx-2 accent-red-300" value={numbers} onChange={e => setnumbers(e.target.checked)} />Numbers</label></div>
                         <div className="stateheading text-red-200 m-0"><label><input type="checkbox" className="mx-2 accent-red-300" value={minify} onChange={e => setminify(e.target.checked)} />Minify</label></div>
                     </div>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-full">
                     <div className="stateheading">Output</div>
                     <textarea className="codearea" value={beautified} readOnly></textarea>
                     <Clipboard text={beautified}>

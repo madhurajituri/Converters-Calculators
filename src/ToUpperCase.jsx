@@ -24,13 +24,13 @@ function ToUpperCase() {
   return (
     <>
       <h2 className="heading">To Upper Case</h2>
-      <div className="flex gap-10 justify-center w-full mb-16">
-        <div className="info flex flex-col items-center justify-center">
+      <div className="flex flex-col md:flex-row gap-10 justify-center m-10">
+        <div className="info flex flex-col items-center justify-center w-full">
           <h3 className="stateheading">Enter text for conversion here!</h3>
           <textarea className="codearea" value={text} onChange={(e) => settext(e.target.value)}></textarea>
           <button className="convertbtn" onClick={insertvalue}>Convert</button>
         </div>
-        <div className="info flex flex-col items-center">
+        <div className="info flex flex-col items-center w-full">
           <h3 className="stateheading">Uppercased text!</h3>
           <textarea className="codearea" value={lowercased} readOnly></textarea>
           <Clipboard text={lowercased}>

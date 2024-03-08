@@ -18,7 +18,7 @@ body{
   }
 
   .btn{
-    @apply text-lg w-72 h-16 z-10 flex justify-center text-center p-2 items-center bg-blue-200 font-mono text-[--primary-dark] hover:bg-neutral-300 active:bg-neutral-400 rounded-xl shadow-sm shadow-slate-600 my-3 border-black md:w-72 md:h-14 md:text-lg lg:text-2xl lg:w-80 lg:h-20 max-[320px]:w-48 max-[320px]:h-24
+    @apply text-lg w-72 h-16 p-4 z-10 flex justify-center text-center items-center bg-blue-200 font-mono text-[--primary-dark] hover:bg-neutral-300 active:bg-neutral-400 rounded-xl shadow-sm shadow-slate-600 my-3 border-black md:w-72 md:h-14 md:text-lg lg:text-2xl lg:w-80 lg:h-20 max-[320px]:w-48 max-[320px]:h-24
   }
 
   .heading{
@@ -26,7 +26,7 @@ body{
   }
 
   .codearea{
-    @apply w-96 h-[65vh] bg-gray-700 border border-gray-300 text-sm text-gray-300 p-2 rounded-md
+    @apply w-full h-48 md:h-[65vh] bg-gray-700 border border-gray-300 text-sm text-gray-300 p-2 rounded-md
   }
 
   .info{
@@ -34,7 +34,7 @@ body{
   }
 
   .convertbtn{
-    @apply w-1/2 h-7 bg-green-400 text-sm text-black rounded-md shadow-sm shadow-black my-4 hover:bg-green-500 active:bg-green-600
+    @apply w-36 h-7 bg-green-400 text-sm text-black rounded-md shadow-sm shadow-black my-4 hover:bg-green-500 active:bg-green-600
   }
 
   .stateheading{

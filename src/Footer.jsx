@@ -1,6 +1,6 @@
 import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import PhoneIcon from '@mui/icons-material/Phone';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -14,11 +14,11 @@ function Footer() {
                 <div className='gap-4 flex flex-col'>
                     <div className='flex gap-4 z-10'>
                         <GitHubIcon color="primary" fontSize='small' />
-                        <a href="https://github.com/madhurajituri/Converters-Calculators" className="text-slate-300 text-xs sm:text-sm">Github</a>
+                        <a href="https://github.com/madhurajituri/Converters-Calculators" target="_blank" className="text-slate-300 text-xs sm:text-sm">Github</a>
                     </div>
                     <div className='flex gap-4'>
-                        <PhoneIcon color="primary" fontSize='small'/>
-                        <div className="text-slate-300 text-xs sm:text-sm">+91 9958560136</div>
+                        <LinkedInIcon color="primary" fontSize='small'/>
+                        <a href="https://www.linkedin.com/in/madhura-jituri-62b099282/" target="_blank" className="text-slate-300 text-xs sm:text-sm">LinkedIn</a>
                     </div>
                 </div>
             </div>

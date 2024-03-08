@@ -27,15 +27,15 @@ function Json() {
     return (
         <div>
             <div className="heading">YAML to JSON</div>
-            <div className="m-10 gap-5 justify-center flex">
-                <div className="items-center gap-2 flex flex-col">
+            <div className="m-10 gap-5 justify-center md:flex-row flex flex-col">
+                <div className="items-center gap-2 flex flex-col w-full">
                     <div className="stateheading">Input YAML</div>
-                    <textarea className="codearea w-[700px]" value={yaml} onChange={e => setyaml(e.target.value)}></textarea>
-                    <button className="convertbtn w-40" onClick={convert}>Convert</button>
+                    <textarea className="codearea" value={yaml} onChange={e => setyaml(e.target.value)}></textarea>
+                    <button className="convertbtn" onClick={convert}>Convert</button>
                 </div>
-                <div className="items-center gap-2 flex flex-col">
+                <div className="items-center gap-2 flex flex-col w-full">
                     <div className="stateheading">Output JSON</div>
-                    <textarea className="codearea w-[700px]" value={json} readOnly>
+                    <textarea className="codearea" value={json} readOnly>
                     </textarea>
                     <Clipboard text={json}>
                         <button onClick={handlecopy} className="rounded-xl bg-slate-700 h-10 w-10 hover:bg-slate-800">
