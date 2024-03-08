@@ -27,4 +27,4 @@ Provides certain calculators and convertors in one platform :
 10. Json Beautifier
 11. IP sunetting (v4/v6)
 
-Currently IP v4/v6 subnet calculator is in prpocess of building and not working.
+Currently IP v4/v6 subnet calculator is in process and not built.
